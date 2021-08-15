@@ -1,3 +1,4 @@
+
 import googleapiclient.discovery
 from oauth2client.client import GoogleCredentials
 from googleapiclient import discovery
@@ -17,4 +18,4 @@ for zone in zones['items']:
         for instance in instances['items']:
             configs.append(instance['name'])
 print(configs)
-fasd
+
