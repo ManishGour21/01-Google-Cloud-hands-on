@@ -14,23 +14,9 @@ this is hands-on repository for google cloud learning path
 
 #we used below python code to communicate with google cloud : storage_list01.py
 
+https://github.com/ManishGour21/01-Google-Cloud-hands-on/blob/main/01storage_list01.py
 
-from google.cloud import storage
-#########################################################################
-import sys
 
-# Authenticate with Google Cloud using the service account key file
-key = sys.argv[1]
-storage_client = storage.Client.from_service_account_json(key)
-
-# List Cloud Storage Buckets to validate the communication
-buckets = list(storage_client.list_buckets())
-print(buckets)
-#########################################################################
-
-use below command from command prompt : 
-python ./storage_list01.py <use service acount key>
-  
 result : 
   
   ![image](https://user-images.githubusercontent.com/88970736/129506601-40a31f00-3616-4a86-8575-6b17c10892bd.png)
