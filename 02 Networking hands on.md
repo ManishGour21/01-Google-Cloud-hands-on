@@ -1,4 +1,4 @@
-# below are steps to complet the project : 
+# Below are steps to complet the project : 
 
 # prerequisites: 
 create AWS account
@@ -6,16 +6,18 @@ Create GCP accout
 
 # Key setup :
 
-Setps : 
-# 1 Creat Project in GCP 
+
+**#1 Creat Project in GCP**
+
 project name - tcb-gcp-aws
 poject ID tcb-gcp-aws-323117
 
 ![image](https://user-images.githubusercontent.com/88970736/129603074-57864c06-c028-4f31-8b5b-769166dc0f85.png)
 
-# 2 Checking if the Billing is enabled
+**#2 Checking if the Billing is enabled**
 
-# 3 Enabling the Compute Engine API
+**#3 Enabling the Compute Engine API**
+
 use below link to enable API : 
 https://console.cloud.google.com/flows/enableapi?apiid=compute_component,deploymentmanager&_ga=2.90885017.2003023334.1613150551-112422406.1602704538
 
