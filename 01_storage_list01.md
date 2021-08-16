@@ -12,7 +12,8 @@ this is hands-on repository for google cloud learning path
 
 ![image](https://user-images.githubusercontent.com/88970736/129506175-9b70a569-6578-455d-a1f0-81e45d7fd645.png)
 
-#we used below python code to communicate with google cloud : 
+#we used below python code to communicate with google cloud : storage_list01.py
+
 
 from google.cloud import storage
 #########################################################################
