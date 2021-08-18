@@ -23,35 +23,39 @@ https://console.cloud.google.com/flows/enableapi?apiid=compute_component,deploym
 
 ![image](https://user-images.githubusercontent.com/88970736/129604756-4e62293b-bd59-4a46-a600-e680a9b5f07c.png)
 
-# 4 Starting the Cloud Shell
+**# 4 Starting the Cloud Shell**
 
 ![image](https://user-images.githubusercontent.com/88970736/129606216-3ef5ad01-fe15-4957-bc59-e8319f0dcd92.png)
 
-# 5 Download project files :
+**# 5 Download project files :**
+
 use curl command on cloud shell 
 
 curl -O C:\Users\manis\OneDrive\Desktop\project 01\Networking\hands-on-tcb-bmc-gcp.zip
 
 ![image](https://user-images.githubusercontent.com/88970736/129607092-693ceea1-fa79-477b-9ce5-c9e2a9176272.png)
 
-# 6 Unzip the project file :
+**# 6 Unzip the project file :**
+
 unzip hands-on-tcb-bmc-gcp.zip
 
 ![image](https://user-images.githubusercontent.com/88970736/129607319-0b026056-b96a-44b1-8eaf-20ca921c7550.png)
 
-# 7 Acessing the folder "hands-on-tcb-bmc-gcp"
+**# 7 Acessing the folder "hands-on-tcb-bmc-gcp"**
+
 cd hands-on-tcb-bmc-gcp
 
 ![image](https://user-images.githubusercontent.com/88970736/129607833-ae6e0b76-c8ad-4495-9d64-2b0620d7995d.png)
 
-# 8 Allowing 'execute' permission for all files .sh
+**# 8 Allowing 'execute' permission for all files .sh**
+
 chmod +x *.sh
 
 ![image](https://user-images.githubusercontent.com/88970736/129607966-e0bd2dc4-c178-4b3b-ad96-6df34e4b76df.png)
 
 # Creating credentials in the GCP
 
-# 1 Creating and downloading the Service Account Key (JSON format)
+**# 1 Creating and downloading the Service Account Key (JSON format)**
 
 Serviceaccount[Name:Compute Engine default service account]
 
@@ -60,18 +64,19 @@ Serviceaccount[Name:Compute Engine default service account]
 
 ![image](https://user-images.githubusercontent.com/88970736/129608687-acf710e3-cb0f-463e-a8e0-49262c7700c5.png)
 
-# 2 Uploading the file (key) .json to the Cloud Shell.
+**# 2 Uploading the file (key) .json to the Cloud Shell.**
 
 ![image](https://user-images.githubusercontent.com/88970736/129609363-4ffa6a32-2f0b-48b4-ba5f-269c332249fd.png)
 
-# 3 Running the command:
+**# 3 Running the command:**
+
 ./gcp_set_credentials.sh ~/file.json
 
 ![image](https://user-images.githubusercontent.com/88970736/129610968-853cfd40-7c99-4335-9050-8fcf0ba285c6.png)
 
 # Creating credentials in the AWS (Oregon - us-west-2)
 
-# 1 AWS console create user 
+**# 1 AWS console create user **
 
 AWS console>>IAM >> Users >> Add user >> Programmatic access
 
@@ -81,14 +86,14 @@ AdministratorAccess Next >> Next >> Create User
 ![image](https://user-images.githubusercontent.com/88970736/129612016-229315df-1cd4-4c51-97c8-3452a41a8278.png)
 
 
-# 2 Renaming the .csv file to accessKeys.csv
+**# 2 Renaming the .csv file to accessKeys.csv**
 
-# 3 Uploading the file (key) .csv to the Cloud Shell.
+**# 3 Uploading the file (key) .csv to the Cloud Shell.**
 
 ![image](https://user-images.githubusercontent.com/88970736/129612420-bd60429a-efd4-43a8-a7c3-14f53a799ac3.png)
 
 
-# 4 Running the command:
+**# 4 Running the command:**
 
 ./aws_set_credentials.sh ~/accessKeys.csv
 
@@ -105,19 +110,21 @@ Makesureyou'reinthefolder'hands-on-tcb-bmc-gcp'Andrunthecommand:
 
 # Setting up the GCP Project
 
-# 1 From Cloud Shell, run the command:
+**# 1 From Cloud Shell, run the command:**
+
 gcloud config set project [YOUR-PROJECT-ID]
 
 ![image](https://user-images.githubusercontent.com/88970736/129613665-436814b1-75fc-4e0c-bbf2-b3151f611850.png)
 
 
-# 2 Run the command: 
+**# 2 Run the command: **
+
 ./gcp_set_project.sh
 
 ![image](https://user-images.githubusercontent.com/88970736/129613868-5b3646d7-5ca8-4804-81e5-f0d18a331fc1.png)
 
 
-# 3 Check if the project-id was inserted into the file terraform.tfvars
+**# 3 Check if the project-id was inserted into the file terraform.tfvars**
 
 cat /home/[YOUR-USERNAME]/hands-on-tcb-bmc-gcp/terraform/terraform.tfvars
 
@@ -126,16 +133,18 @@ cat /home/[YOUR-USERNAME]/hands-on-tcb-bmc-gcp/terraform/terraform.tfvars
 
 # Generating a Key Pairs
 
-# 1 Run the command 'whoami' to get your username
+**# 1 Run the command 'whoami' to get your username**
 
 ![image](https://user-images.githubusercontent.com/88970736/129614412-a6926fcf-28b8-4fc3-964b-aebcde0fb675.png)
 
-# 2 Run the command below, replacing 'YOUR-USERNAME'
+**# 2 Run the command below, replacing 'YOUR-USERNAME'**
+
 ssh-keygen -t rsa -f ~/.ssh/vm-ssh-key -C [YOUR-USERNAME]
 
 ![image](https://user-images.githubusercontent.com/88970736/129614616-36d94839-06df-47ce-a79f-a9abe84b96e3.png)
 
-# 3 Run the command below to set up a permission to the private key:
+**# 3 Run the command below to set up a permission to the private key:**
+
 Run the command below to set up a permission to the private key:
 
 chmod 400 ~/.ssh/vm-ssh-key
@@ -171,6 +180,27 @@ download key from :
 
 ![image](https://user-images.githubusercontent.com/88970736/129617038-a60c74c2-52aa-4bff-b88e-6f4fa7d6785b.png)
 
+# Terraform time
+
+1 From Cloud Shell, make sure you're in the folder 'hands-on-tcb-bmc-gcp'
+2 Go to the Terraform's folder:cd terraform
+3 Run the command below to initialize the Terraform:
+  terraform init
+  
+  ![image](https://user-images.githubusercontent.com/88970736/129822975-970a468a-8565-4376-a8cf-7b0fcd9f4514.png)
+
+4 Run this command to validate the Terraform configuration:
+  terraform validate
+  
+  ![image](https://user-images.githubusercontent.com/88970736/129823149-15ffddec-e8f7-4827-8b03-5ca759d30ce9.png)
+
+5 Run the command below to check the Terraform planning deployment:
+  terraform plan
+  
+  ![image](https://user-images.githubusercontent.com/88970736/129823329-f2424255-fd68-4d8e-a58b-3babaf639472.png)
+
+6  Terraform deployment:
+  terraform apply
 
 
 
