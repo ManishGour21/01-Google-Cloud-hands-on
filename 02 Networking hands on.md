@@ -201,7 +201,35 @@ download key from :
 
 6  Terraform deployment:
   terraform apply
+![image](https://user-images.githubusercontent.com/88970736/129824271-89a38856-5153-424a-863c-d245a078e4d4.png)
+![image](https://user-images.githubusercontent.com/88970736/129824443-30f87417-1e59-491d-bfc5-f3037970693b.png)
 
+
+# Command to view the variables shown at the end of deployment.
+
+terraform output
+
+# Connectivity validation :
+
+>> go to VM Instance
+>> Click on SSH to open Lunix console
+![image](https://user-images.githubusercontent.com/88970736/129825908-4d19b2eb-89f9-4ed7-b021-b1ef2abe43a8.png)
+>> go to AWS and copy private IP :
+
+![image](https://user-images.githubusercontent.com/88970736/129826106-0a87fb79-a7f9-4267-9db1-02d21a59ed6b.png)
+
+>> ping the IP in SSH console : 
+![image](https://user-images.githubusercontent.com/88970736/129826447-1e959296-2f6c-4bf0-bcfb-372759b949ef.png)
+
+
+# Connectivity test from GCP 
+
+>> go to Network Inteligence 
+>> creat a new test
+>> provide source and destination IP and network detaisls
+>> submmit test 
+
+![image](https://user-images.githubusercontent.com/88970736/129827185-ecb43d06-94a1-45ab-b1ba-964bbb870a5d.png)
 
 
 
