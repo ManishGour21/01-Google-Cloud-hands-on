@@ -1,6 +1,7 @@
 # Follow below steps 
 
 **Enable following APIs on project : **
+
 - Cloud Resource manager
 - Compute engine
 - Kuberneties Engine
@@ -86,7 +87,7 @@ sudo unzip hands-on-compute-website-files-en.zip
 to sets read and write purmission to usersgroups and VM 
 sudo chmod 644 *
 
-**8 CopytheExternalIPoftheComputeEnginecreatedandaccessitviabrowsertovalidateiftheLift & Shiftprocesswascompletedsuccessfully**
+**8 Copy the External IP of the Compute Engine created and access it via browser to validate if the Lift & Shift process was completed successfully**
 
 ![image](https://user-images.githubusercontent.com/88970736/130491390-1313a154-af5d-415b-ad01-15b1a7489a95.png)
 
