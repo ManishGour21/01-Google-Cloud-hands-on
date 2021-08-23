@@ -192,3 +192,12 @@ kubectl get service talent-management-portal
 Docker Registory :
 
 ![image](https://user-images.githubusercontent.com/88970736/130508878-75c19c84-0659-4c4c-896a-8289e8592b19.png)
+
+Storage buckets : 
+
+![image](https://user-images.githubusercontent.com/88970736/130510743-91432bd8-e801-448a-ac91-7b4d5666b390.png)
+
+
+# information about Anthos : 
+
+https://cloud.google.com/anthos
