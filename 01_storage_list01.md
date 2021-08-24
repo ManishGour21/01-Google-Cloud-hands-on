@@ -21,5 +21,14 @@ result :
   
   ![image](https://user-images.githubusercontent.com/88970736/129506601-40a31f00-3616-4a86-8575-6b17c10892bd.png)
 
+# Virtual Machine :
+
+**created new VM:** 
+
+![image](https://user-images.githubusercontent.com/88970736/130678282-26fa4199-252b-4dbc-8a03-976ebe470af7.png)
+
+Python script : this script will login to google cloud and get all VM details for given project ID
+
+![image](https://user-images.githubusercontent.com/88970736/130678534-3a1ba059-5c8a-40e7-9468-cb8d2c60b361.png)
 
   
