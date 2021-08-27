@@ -164,3 +164,62 @@ ClickonCreate
 **applicaiton is working : **
 
 ![image](https://user-images.githubusercontent.com/88970736/131026224-8274b5bc-b777-40a0-9571-5475e57edef6.png)
+
+# Migrating the VMs using the Storage Snapshot
+
+**01 Disk used by VMs**
+us-app1
+us-db1
+
+**CreatingsnapshotfromdisksoftheVMs**
+
+gcloud compute disks snapshot us-db01 --snapshot-names us-db01-snapshot --zone us-west1-b
+
+gcloud compute disks snapshot us-app01 --snapshot-names us-app01-snapshot --zone us-west1-b
+
+![image](https://user-images.githubusercontent.com/88970736/131158052-a9ad5eb2-aa72-4635-ade6-1ea345dfa1eb.png)
+
+**Creatingdisksintheaustralia-southeast1 **
+
+gcloud compute disks create aus-db01 --source-snapshot us-db01-snapshot --zone australia-southeast1-a
+
+![image](https://user-images.githubusercontent.com/88970736/131158327-07192ecf-916b-488f-9d53-06b9a7c3c085.png)
+
+
+gcloud compute disks create aus-app01 --source-snapshot us-app01-snapshot --zone australia-southeast1-a
+
+![image](https://user-images.githubusercontent.com/88970736/131158467-cce84573-8099-470a-abe1-428c13690379.png)
+
+**Creating instances in the Sydney region,using as source the disks created in the previous step **
+
+
+gcloud compute instances create aus-app01 --machine-type e2-micro --zone australia-southeast1-a --disk name=aus-app01,boot=yes,mode=rw
+
+![image](https://user-images.githubusercontent.com/88970736/131159135-98437d78-ac53-4022-92c3-cdb0554302c2.png)
+
+gcloud compute instances create aus-db01 --machine-type e2-micro --zone australia-southeast1-a --disk name=aus-db01,boot=yes,mode=rw
+
+![image](https://user-images.githubusercontent.com/88970736/131159241-c7a5fe21-1517-4bbd-a8c1-d7a042d4c122.png)
+
+**Accessing the instance aus-app01 via ssh**
+Accessingthefolderbootcamp-gcp-storage-clinic-mib-app
+CD bootcamp-gcp-storage-clinic-mid-app
+
+
+**Editingthefilesrc/index.js**
+
+vi src/index.js
+
+In the Middlewares section, replace: 
+
+host: to the private IP private of the VM aus-db01
+
+**Starting the application**
+node src/index.js
+
+**Accessing the application on port 3000 in the browser:**
+
+http://<external-ip-from-aus-app01:3000
+
+
+![image](https://user-images.githubusercontent.com/88970736/131160564-efcb9508-e1f3-4a64-bbb5-faa8ee3465da.png)
