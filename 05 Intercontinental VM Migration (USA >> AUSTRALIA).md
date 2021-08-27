@@ -171,7 +171,8 @@ ClickonCreate
 us-app1
 us-db1
 
-**CreatingsnapshotfromdisksoftheVMs**
+**Creating snapshot from disks of the VMs **
+
 
 gcloud compute disks snapshot us-db01 --snapshot-names us-db01-snapshot --zone us-west1-b
 
@@ -179,7 +180,8 @@ gcloud compute disks snapshot us-app01 --snapshot-names us-app01-snapshot --zone
 
 ![image](https://user-images.githubusercontent.com/88970736/131158052-a9ad5eb2-aa72-4635-ade6-1ea345dfa1eb.png)
 
-**Creatingdisksintheaustralia-southeast1 **
+**Creating disks in the australia-southeast1 **
+
 
 gcloud compute disks create aus-db01 --source-snapshot us-db01-snapshot --zone australia-southeast1-a
 
