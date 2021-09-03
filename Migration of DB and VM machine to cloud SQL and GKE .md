@@ -109,7 +109,42 @@ wget https://storage.googleapis.com/bootcamp-gcp-en/tcb-clinic.yaml
   ![image](https://user-images.githubusercontent.com/88970736/132054717-85694423-1940-4965-b298-53da064e55ad.png)
 
 
+# Database Migration Process
+  
+  Accessing the Compute Engine service and turn off the GCE aus-app01
+  
+  **Exporting the DB of the MySQL GCE**
+  
+  Access the aus-db01 instance via ssh
+  Run this command to export the data:
+
+  mysqldump --add-drop-table -u root -p clinic > clinic.sql
+  
+  **WorkaroundtotheerrorERROR1273(HY000)atline25:Unknowncollation:'utf8mb4_0900_ai_ci'**
+  
+  sed -e 's/utf8mb4_0900_ai_ci/utf8mb4_unicode_ci/g' -i clinic.sql
+  
+  **ImportingdataintothecreatedDB(CloudSQL)****
   
   
+  mysql -u app -p -h <PRIVATE_IP_CLOUDSQL> clinic < clinic.sql 
+                                                              
+ 10.47.16.2
+
+                                                              
+** Connecting to Cloud SQL DB and checking the imported data:**
+                                                              
+                                                              
+mysql -u app -p -h <PRIVATE_IP_CLOUDSQL>
+  
+  use clinic;
+  select * from patient;
+  
+  ![image](https://user-images.githubusercontent.com/88970736/132058665-ec630e22-e84c-486c-819d-9db552162563.png)
+
+  
+  ![image](https://user-images.githubusercontent.com/88970736/132058694-b2a538b6-1ce6-4526-83df-26f504051ff5.png)
+  
+  ![image](https://user-images.githubusercontent.com/88970736/132059027-780ff00d-67a8-4610-84a9-8517c9e51281.png)
 
   
